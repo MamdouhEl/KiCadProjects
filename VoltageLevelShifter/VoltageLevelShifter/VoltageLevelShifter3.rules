@@ -1,0 +1,88 @@
+
+(rules PCB VoltageLevelShifter3
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 6244)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.7)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+  )
+  (rule
+    (width 900.0)
+    (clear 600.2)
+    (clear 450.0 (type smd_to_turn_gap))
+    (clear 150.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:500_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:500_um" "Via[0-1]_800:500_um" default
+  )
+  (via 
+    "Via[0-1]_800:500_um-kicad_default" "Via[0-1]_800:500_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:500_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:500_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 900.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(J10-Pad4)" "Net-(R15-Pad1)" "Net-(J2-Pad4)" "Net-(J2-Pad3)" "Net-(R10-Pad1)" "Net-(J10-Pad3)" "Net-(J10-Pad2)" "Net-(R3-Pad1)"
+    "Net-(J2-Pad2)" "Net-(J2-Pad1)" "Net-(R1-Pad1)" "Net-(J10-Pad1)" "Net-(J11-Pad4)" "Net-(R27-Pad2)" "Net-(J4-Pad4)" "Net-(J4-Pad3)"
+    "Net-(R28-Pad1)" "Net-(J11-Pad3)" "Net-(J11-Pad2)" "Net-(R18-Pad1)" "Net-(J4-Pad2)" "Net-(J4-Pad1)" "Net-(R19-Pad1)" "Net-(J11-Pad1)"
+    "Net-(J12-Pad4)" "Net-(R41-Pad2)" "Net-(J6-Pad4)" "Net-(J6-Pad3)" "Net-(R42-Pad1)" "Net-(J12-Pad3)" "Net-(J12-Pad2)" "Net-(R34-Pad1)"
+    "Net-(J6-Pad2)" "Net-(J6-Pad1)" "Net-(R35-Pad1)" "Net-(J12-Pad1)" "Net-(J17-Pad4)" "Net-(R57-Pad2)" "Net-(J8-Pad4)" "Net-(J8-Pad3)"
+    "Net-(R58-Pad1)" "Net-(J17-Pad3)" "Net-(J17-Pad2)" "Net-(R52-Pad1)" "Net-(J8-Pad2)" "Net-(J8-Pad1)" "Net-(R50-Pad1)" "Net-(J17-Pad1)"
+    "Net-(J13-Pad4)" "Net-(R11-Pad2)" "Net-(J3-Pad4)" "Net-(J3-Pad3)" "Net-(R12-Pad1)" "Net-(J13-Pad3)" "Net-(J13-Pad2)" "Net-(R4-Pad1)"
+    "Net-(J3-Pad2)" "Net-(J3-Pad1)" "Net-(R2-Pad1)" "Net-(J13-Pad1)" "Net-(J14-Pad4)" "Net-(R25-Pad2)" "Net-(J5-Pad4)" "Net-(J5-Pad3)"
+    "Net-(R26-Pad1)" "Net-(J14-Pad3)" "Net-(J14-Pad2)" "Net-(R20-Pad1)" "Net-(J5-Pad2)" "Net-(J5-Pad1)" "Net-(R17-Pad1)" "Net-(J14-Pad1)"
+    "Net-(J15-Pad4)" "Net-(R43-Pad2)" "Net-(J7-Pad4)" "Net-(J7-Pad3)" "Net-(R44-Pad1)" "Net-(J15-Pad3)" "Net-(J15-Pad2)" "Net-(R36-Pad1)"
+    "Net-(J7-Pad2)" "Net-(J7-Pad1)" "Net-(R33-Pad1)" "Net-(J15-Pad1)" "Net-(J16-Pad4)" "Net-(R59-Pad2)" "Net-(J9-Pad4)" "Net-(J9-Pad3)"
+    "Net-(R60-Pad1)" "Net-(J16-Pad3)" "Net-(J16-Pad2)" "Net-(R51-Pad2)" "Net-(J9-Pad2)" "Net-(J9-Pad1)" "Net-(R49-Pad1)" "Net-(J16-Pad1)"
+    "Net-(C1-Pad2)" "Net-(C1-Pad1)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 900.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
