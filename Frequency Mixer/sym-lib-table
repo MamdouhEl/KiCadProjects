@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Frequency Mixer-rescue")(type "KiCad")(uri "${KIPRJMOD}/Frequency Mixer-rescue.kicad_sym")(options "")(descr ""))
+)
